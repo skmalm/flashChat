@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0KC-XM-dOq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PQ3-aZ-N6r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚡️FlashChat" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="PUt-Xx-leC" userLabel="App Name Label">
-                                <rect key="frame" x="30" y="393.33333333333331" width="354" height="119.66666666666669"/>
+                                <rect key="frame" x="30" y="415.33333333333331" width="354" height="119.66666666666669"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="100"/>
                                 <color key="textColor" name="BrandBlue"/>
                                 <nil key="highlightedColor"/>
@@ -52,6 +52,9 @@
                                         <variation key="widthClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         </variation>
+                                        <connections>
+                                            <segue destination="gjE-qf-jQz" kind="show" identifier="showLoginScene" id="nmO-qa-kkA"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -69,13 +72,84 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qgq-8x-btu"/>
                     </view>
+                    <navigationItem key="navigationItem" id="SQd-GN-5pC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w95-cJ-GBm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2" y="158"/>
+            <point key="canvasLocation" x="911.59420289855075" y="157.36607142857142"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="iDv-qt-TmA">
+            <objects>
+                <viewController id="gjE-qf-jQz" customClass="LoginViewController" customModule="flashChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="10f-rU-gtw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Hzz-Kd-VUk">
+                                <rect key="frame" x="30" y="128" width="354" height="184"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1@2.com" textAlignment="center" minimumFontSize="17" background="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="geq-3Y-jm2">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="48"/>
+                                        <color key="textColor" name="BrandBlue"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="······" textAlignment="center" minimumFontSize="17" background="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="39w-bp-3lS">
+                                        <rect key="frame" x="0.0" y="68" width="354" height="48"/>
+                                        <color key="textColor" name="BrandBlue"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwL-Ta-3js">
+                                        <rect key="frame" x="0.0" y="136" width="354" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                        <state key="normal" title="Log In">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="BrandBlue"/>
+                        <constraints>
+                            <constraint firstItem="Hzz-Kd-VUk" firstAttribute="top" secondItem="47L-wg-iUo" secondAttribute="top" constant="40" id="6T9-t8-TN4"/>
+                            <constraint firstItem="47L-wg-iUo" firstAttribute="trailing" secondItem="Hzz-Kd-VUk" secondAttribute="trailing" constant="30" id="U1u-fG-jhw"/>
+                            <constraint firstItem="Hzz-Kd-VUk" firstAttribute="leading" secondItem="47L-wg-iUo" secondAttribute="leading" constant="30" id="a5G-6u-Qok"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="47L-wg-iUo"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eXy-IK-5GU"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="geq-3Y-jm2" id="zP9-6j-rdt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vwe-Gp-jPE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1917" y="157"/>
+        </scene>
+        <!--Flash Chat Navigation Controller-->
+        <scene sceneID="Axs-KU-xln">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PQ3-aZ-N6r" customClass="FlashChatNavigationController" customModule="flashChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zl3-As-0VD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="BrandBlue"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0KC-XM-dOq" kind="relationship" relationship="rootViewController" id="L7h-Fc-lcN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NS3-2y-s86" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1.4492753623188408" y="157.36607142857142"/>
         </scene>
     </scenes>
     <resources>
+        <image name="textfield" width="298" height="93"/>
         <namedColor name="BrandBlue">
             <color red="0.164000004529953" green="0.77999997138977051" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
