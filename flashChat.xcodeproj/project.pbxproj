@@ -16,6 +16,7 @@
 		9E984D742416F2B1002AFD02 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E984D732416F2B1002AFD02 /* LoginViewController.swift */; };
 		9E984D762416F61A002AFD02 /* FlashChatNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E984D752416F61A002AFD02 /* FlashChatNavigationController.swift */; };
 		9E984D782416FBEB002AFD02 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E984D772416FBEB002AFD02 /* RegistrationViewController.swift */; };
+		9E984D7A2416FDC7002AFD02 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E984D792416FDC7002AFD02 /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9E984D732416F2B1002AFD02 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9E984D752416F61A002AFD02 /* FlashChatNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashChatNavigationController.swift; sourceTree = "<group>"; };
 		9E984D772416FBEB002AFD02 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		9E984D792416FDC7002AFD02 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				9E5625AA2415ACC400B3159A /* Main.storyboard */,
+				9E984D792416FDC7002AFD02 /* ChatViewController.swift */,
 				9E984D752416F61A002AFD02 /* FlashChatNavigationController.swift */,
 				9E984D732416F2B1002AFD02 /* LoginViewController.swift */,
 				9E984D772416FBEB002AFD02 /* RegistrationViewController.swift */,
@@ -158,6 +161,7 @@
 				9E984D782416FBEB002AFD02 /* RegistrationViewController.swift in Sources */,
 				9E984D742416F2B1002AFD02 /* LoginViewController.swift in Sources */,
 				9E984D762416F61A002AFD02 /* FlashChatNavigationController.swift in Sources */,
+				9E984D7A2416FDC7002AFD02 /* ChatViewController.swift in Sources */,
 				9E5625A52415ACC400B3159A /* AppDelegate.swift in Sources */,
 				9E5625A72415ACC400B3159A /* SceneDelegate.swift in Sources */,
 				9E5625BA2415B07700B3159A /* TitleViewController.swift in Sources */,

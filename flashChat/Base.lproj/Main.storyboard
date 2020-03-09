@@ -39,7 +39,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         </variation>
                                         <connections>
-                                            <segue destination="YaS-n6-GYR" kind="show" id="H7U-eU-VLg"/>
+                                            <segue destination="YaS-n6-GYR" kind="show" identifier="showRegistrationScene" id="H7U-eU-VLg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJu-eC-3Ta">
@@ -110,6 +110,9 @@
                                         <state key="normal" title="Register">
                                             <color key="titleColor" name="BrandBlue"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="B1P-r6-cfs" kind="show" identifier="showChatScene" id="5t0-2G-QWn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -157,6 +160,9 @@
                                         <state key="normal" title="Log In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="B1P-r6-cfs" kind="show" identifier="showChatScene" id="5fb-fM-beO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -177,6 +183,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vwe-Gp-jPE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1909" y="727"/>
+        </scene>
+        <!--⚡️FlashChat-->
+        <scene sceneID="8Yq-nI-jgR">
+            <objects>
+                <viewController id="B1P-r6-cfs" customClass="ChatViewController" customModule="flashChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AGO-yh-YFb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="fVN-E3-Vb0"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="⚡️FlashChat" id="v4J-qR-Tqg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fta-nj-M1T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3094" y="278"/>
         </scene>
         <!--Flash Chat Navigation Controller-->
         <scene sceneID="Axs-KU-xln">
@@ -207,5 +229,8 @@
             <color red="0.92199999094009399" green="0.98000001907348633" blue="0.99699997901916504" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="5fb-fM-beO"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
