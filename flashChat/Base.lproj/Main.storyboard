@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0KC-XM-dOq">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -16,17 +16,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FlashChat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUt-Xx-leC">
-                                <rect key="frame" x="104.5" y="424" width="205" height="48"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚡️FlashChat" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="PUt-Xx-leC">
+                                <rect key="frame" x="30" y="393.33333333333331" width="354" height="119.66666666666669"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="100"/>
                                 <color key="textColor" name="BrandBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gPR-f2-TY3">
+                                <rect key="frame" x="0.0" y="734" width="414" height="118"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9CW-8N-rbb">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                        <color key="backgroundColor" name="BrandLightBlue"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <state key="normal" title="Register">
+                                            <color key="titleColor" name="BrandBlue"/>
+                                        </state>
+                                        <variation key="heightClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJu-eC-3Ta">
+                                        <rect key="frame" x="0.0" y="64" width="414" height="54"/>
+                                        <color key="backgroundColor" name="BrandBlue"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <state key="normal" title="Log In">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <variation key="heightClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        </variation>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="PUt-Xx-leC" firstAttribute="centerX" secondItem="r2v-FL-6Q7" secondAttribute="centerX" id="Fa3-Jh-P19"/>
-                            <constraint firstItem="PUt-Xx-leC" firstAttribute="centerY" secondItem="r2v-FL-6Q7" secondAttribute="centerY" id="REQ-0f-uMO"/>
+                            <constraint firstItem="PUt-Xx-leC" firstAttribute="centerY" secondItem="qgq-8x-btu" secondAttribute="centerY" id="0fV-To-6qP">
+                                <variation key="heightClass=compact" constant="-50"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="gPR-f2-TY3" secondAttribute="trailing" id="Wvn-MK-1UU"/>
+                            <constraint firstItem="gPR-f2-TY3" firstAttribute="leading" secondItem="r2v-FL-6Q7" secondAttribute="leading" id="Zd7-Kc-Ka8"/>
+                            <constraint firstItem="qgq-8x-btu" firstAttribute="bottom" secondItem="gPR-f2-TY3" secondAttribute="bottom" constant="10" id="dB8-yo-nnr"/>
+                            <constraint firstItem="PUt-Xx-leC" firstAttribute="leading" secondItem="qgq-8x-btu" secondAttribute="leading" constant="30" id="ifr-WE-cgf"/>
+                            <constraint firstItem="qgq-8x-btu" firstAttribute="trailing" secondItem="PUt-Xx-leC" secondAttribute="trailing" constant="30" id="uPc-9d-DJL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qgq-8x-btu"/>
                     </view>
@@ -39,6 +78,9 @@
     <resources>
         <namedColor name="BrandBlue">
             <color red="0.164000004529953" green="0.77999997138977051" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BrandLightBlue">
+            <color red="0.92199999094009399" green="0.98000001907348633" blue="0.99699997901916504" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
