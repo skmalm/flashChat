@@ -1,5 +1,5 @@
 //
-//  FlashChatNavigationController.swift
+//  RegistrationViewController.swift
 //  flashChat
 //
 //  Created by Sebastian Malm on 3/9/20.
@@ -8,6 +8,8 @@
 
 import UIKit
 
-class FlashChatNavigationController: UINavigationController {
+class RegistrationViewController: UIViewController {
+
     
+
 }

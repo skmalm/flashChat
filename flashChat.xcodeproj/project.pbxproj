@@ -15,6 +15,7 @@
 		9E5625BA2415B07700B3159A /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5625B92415B07700B3159A /* TitleViewController.swift */; };
 		9E984D742416F2B1002AFD02 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E984D732416F2B1002AFD02 /* LoginViewController.swift */; };
 		9E984D762416F61A002AFD02 /* FlashChatNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E984D752416F61A002AFD02 /* FlashChatNavigationController.swift */; };
+		9E984D782416FBEB002AFD02 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E984D772416FBEB002AFD02 /* RegistrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9E5625B92415B07700B3159A /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		9E984D732416F2B1002AFD02 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9E984D752416F61A002AFD02 /* FlashChatNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashChatNavigationController.swift; sourceTree = "<group>"; };
+		9E984D772416FBEB002AFD02 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				9E5625AA2415ACC400B3159A /* Main.storyboard */,
 				9E984D752416F61A002AFD02 /* FlashChatNavigationController.swift */,
 				9E984D732416F2B1002AFD02 /* LoginViewController.swift */,
+				9E984D772416FBEB002AFD02 /* RegistrationViewController.swift */,
 				9E5625B92415B07700B3159A /* TitleViewController.swift */,
 				9E5625AD2415ACC900B3159A /* Assets.xcassets */,
 				9E5625AF2415ACC900B3159A /* LaunchScreen.storyboard */,
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E984D782416FBEB002AFD02 /* RegistrationViewController.swift in Sources */,
 				9E984D742416F2B1002AFD02 /* LoginViewController.swift in Sources */,
 				9E984D762416F61A002AFD02 /* FlashChatNavigationController.swift in Sources */,
 				9E5625A52415ACC400B3159A /* AppDelegate.swift in Sources */,

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PQ3-aZ-N6r">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚡️FlashChat" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="PUt-Xx-leC" userLabel="App Name Label">
-                                <rect key="frame" x="30" y="415.33333333333331" width="354" height="119.66666666666669"/>
+                                <rect key="frame" x="30" y="415.5" width="354" height="119.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="100"/>
                                 <color key="textColor" name="BrandBlue"/>
                                 <nil key="highlightedColor"/>
@@ -38,6 +38,9 @@
                                         <variation key="widthClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         </variation>
+                                        <connections>
+                                            <segue destination="YaS-n6-GYR" kind="show" id="H7U-eU-VLg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJu-eC-3Ta">
                                         <rect key="frame" x="0.0" y="64" width="414" height="54"/>
@@ -78,6 +81,53 @@
             </objects>
             <point key="canvasLocation" x="911.59420289855075" y="157.36607142857142"/>
         </scene>
+        <!--Registration View Controller-->
+        <scene sceneID="d8f-CP-bob">
+            <objects>
+                <viewController id="YaS-n6-GYR" customClass="RegistrationViewController" customModule="flashChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mgv-2n-6nQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cZX-yq-k3b">
+                                <rect key="frame" x="30" y="128" width="354" height="184"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" background="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="jMu-Pw-VeR" userLabel="EmailTextField">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="48"/>
+                                        <color key="textColor" name="BrandBlue"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="mpR-9P-1yn" userLabel="PasswordTextField">
+                                        <rect key="frame" x="0.0" y="68" width="354" height="48"/>
+                                        <color key="textColor" name="BrandBlue"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xla-2x-8Ck">
+                                        <rect key="frame" x="0.0" y="136" width="354" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                        <state key="normal" title="Register">
+                                            <color key="titleColor" name="BrandBlue"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="BrandLightBlue"/>
+                        <constraints>
+                            <constraint firstItem="JjH-As-ksB" firstAttribute="trailing" secondItem="cZX-yq-k3b" secondAttribute="trailing" constant="30" id="1F0-Dz-CDf"/>
+                            <constraint firstItem="cZX-yq-k3b" firstAttribute="leading" secondItem="JjH-As-ksB" secondAttribute="leading" constant="30" id="o7c-i4-DLG"/>
+                            <constraint firstItem="cZX-yq-k3b" firstAttribute="top" secondItem="JjH-As-ksB" secondAttribute="top" constant="40" id="uWZ-Xp-FjI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JjH-As-ksB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uCi-Bk-bFZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GtE-kz-WC4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2024" y="-230"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="iDv-qt-TmA">
             <objects>
@@ -95,7 +145,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="······" textAlignment="center" minimumFontSize="17" background="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="39w-bp-3lS">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="······" textAlignment="center" minimumFontSize="17" background="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="39w-bp-3lS" userLabel="PasswordTextField">
                                         <rect key="frame" x="0.0" y="68" width="354" height="48"/>
                                         <color key="textColor" name="BrandBlue"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -126,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vwe-Gp-jPE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1917" y="157"/>
+            <point key="canvasLocation" x="1909" y="727"/>
         </scene>
         <!--Flash Chat Navigation Controller-->
         <scene sceneID="Axs-KU-xln">
@@ -157,4 +207,5 @@
             <color red="0.92199999094009399" green="0.98000001907348633" blue="0.99699997901916504" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
