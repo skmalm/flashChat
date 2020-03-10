@@ -89,16 +89,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="X0u-yw-BNU" userLabel="emailFieldBackground">
+                                <rect key="frame" x="0.0" y="116" width="414" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="lG5-GN-MRD"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="lHq-ZT-Klo" userLabel="passwordFieldBackground">
+                                <rect key="frame" x="0.0" y="184" width="414" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="vUX-w5-yNd"/>
+                                </constraints>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cZX-yq-k3b">
                                 <rect key="frame" x="30" y="128" width="354" height="184"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" background="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="jMu-Pw-VeR" userLabel="EmailTextField">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMu-Pw-VeR" userLabel="EmailTextField">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="48"/>
                                         <color key="textColor" name="BrandBlue"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="mpR-9P-1yn" userLabel="PasswordTextField">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mpR-9P-1yn" userLabel="PasswordTextField">
                                         <rect key="frame" x="0.0" y="68" width="354" height="48"/>
                                         <color key="textColor" name="BrandBlue"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -120,7 +132,13 @@
                         <color key="backgroundColor" name="BrandLightBlue"/>
                         <constraints>
                             <constraint firstItem="JjH-As-ksB" firstAttribute="trailing" secondItem="cZX-yq-k3b" secondAttribute="trailing" constant="30" id="1F0-Dz-CDf"/>
+                            <constraint firstItem="lHq-ZT-Klo" firstAttribute="top" secondItem="mpR-9P-1yn" secondAttribute="top" constant="-12" id="1UJ-Q8-QSX"/>
+                            <constraint firstItem="lHq-ZT-Klo" firstAttribute="width" secondItem="mpR-9P-1yn" secondAttribute="width" constant="60" id="XoC-Tw-Zey"/>
+                            <constraint firstItem="lHq-ZT-Klo" firstAttribute="leading" secondItem="cZX-yq-k3b" secondAttribute="leading" constant="-30" id="Yhg-fi-ybD"/>
+                            <constraint firstItem="X0u-yw-BNU" firstAttribute="leading" secondItem="cZX-yq-k3b" secondAttribute="leading" constant="-30" id="Zm2-Sc-gqO"/>
                             <constraint firstItem="cZX-yq-k3b" firstAttribute="leading" secondItem="JjH-As-ksB" secondAttribute="leading" constant="30" id="o7c-i4-DLG"/>
+                            <constraint firstItem="X0u-yw-BNU" firstAttribute="width" secondItem="jMu-Pw-VeR" secondAttribute="width" constant="60" id="ouG-pO-62I"/>
+                            <constraint firstItem="X0u-yw-BNU" firstAttribute="top" secondItem="jMu-Pw-VeR" secondAttribute="top" constant="-12" id="qlx-Ui-01X"/>
                             <constraint firstItem="cZX-yq-k3b" firstAttribute="top" secondItem="JjH-As-ksB" secondAttribute="top" constant="40" id="uWZ-Xp-FjI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JjH-As-ksB"/>
@@ -133,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GtE-kz-WC4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2024" y="-230"/>
+            <point key="canvasLocation" x="2023.1884057971015" y="-230.35714285714283"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="iDv-qt-TmA">
