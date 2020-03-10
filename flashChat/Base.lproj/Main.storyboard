@@ -126,6 +126,10 @@
                         <viewLayoutGuide key="safeArea" id="JjH-As-ksB"/>
                     </view>
                     <navigationItem key="navigationItem" id="uCi-Bk-bFZ"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="jMu-Pw-VeR" id="1np-58-K0g"/>
+                        <outlet property="passwordTextField" destination="mpR-9P-1yn" id="GBt-AE-Xi3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GtE-kz-WC4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -178,11 +182,12 @@
                     <navigationItem key="navigationItem" id="eXy-IK-5GU"/>
                     <connections>
                         <outlet property="emailTextField" destination="geq-3Y-jm2" id="zP9-6j-rdt"/>
+                        <outlet property="passwordTextField" destination="39w-bp-3lS" id="5hC-hH-FnL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vwe-Gp-jPE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1909" y="727"/>
+            <point key="canvasLocation" x="2023" y="726"/>
         </scene>
         <!--⚡️FlashChat-->
         <scene sceneID="8Yq-nI-jgR">
@@ -228,10 +233,13 @@
                         <viewLayoutGuide key="safeArea" id="fVN-E3-Vb0"/>
                     </view>
                     <navigationItem key="navigationItem" title="⚡️FlashChat" id="v4J-qR-Tqg"/>
+                    <connections>
+                        <outlet property="messageTextField" destination="xVb-ow-kJL" id="gI9-O3-vYc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fta-nj-M1T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3092.753623188406" y="277.90178571428572"/>
+            <point key="canvasLocation" x="3107" y="157"/>
         </scene>
         <!--Flash Chat Navigation Controller-->
         <scene sceneID="Axs-KU-xln">

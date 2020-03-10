@@ -9,7 +9,19 @@
 import UIKit
 
 class RegistrationViewController: UIViewController {
-
     
+    @IBOutlet weak var emailTextField: UITextField! { didSet {emailTextField.delegate = self}}
+    @IBOutlet weak var passwordTextField: UITextField! { didSet {passwordTextField.delegate = self}}
+    
+}
 
+extension RegistrationViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.text == "" {
+            return false
+        } else {
+            textField.endEditing(true)
+            return true
+        }
+    }
 }

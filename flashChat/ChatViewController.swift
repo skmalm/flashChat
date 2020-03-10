@@ -10,6 +10,9 @@ import UIKit
 
 class ChatViewController: UIViewController {
 
+    @IBOutlet weak var messageTextField: UITextField! { didSet { messageTextField.delegate = self}}
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.hidesBackButton = true
@@ -27,4 +30,15 @@ class ChatViewController: UIViewController {
         navigationController?.popToRootViewController(animated: true)
     }
     
+}
+
+extension ChatViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.text == "" {
+            return false
+        } else {
+            textField.endEditing(true)
+            return true
+        }
+    }
 }
