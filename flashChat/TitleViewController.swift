@@ -10,6 +10,8 @@ import UIKit
 
 class TitleViewController: UIViewController {
 
+    // MARK: - Lifecycle
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
@@ -19,7 +21,7 @@ class TitleViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let titleString = "⚡️FlashChat"
@@ -30,15 +32,21 @@ class TitleViewController: UIViewController {
             } else {
                 let index = titleString.index(titleString.startIndex, offsetBy: indexTracker)
                 let outputString = String(titleString[titleString.startIndex...index])
+                // adding spaces stops chars from starting out huge
                 let spaces = String(repeating: " ", count: titleString.count - outputString.count)
                 self.appNameLabel.text = outputString + spaces
                 indexTracker += 1
             }
         }
     }
+
+    // MARK: - Properties
     
     @IBOutlet weak var appNameLabel: UILabel!
+    
 }
+
+// MARK: - Extensions
 
 extension TitleViewController {
     struct Constants {
