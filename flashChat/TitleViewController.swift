@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CLTypingLabel
 
 class TitleViewController: UIViewController {
 
@@ -24,32 +25,12 @@ class TitleViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let titleString = "⚡️FlashChat"
-        var indexTracker = 0
-        Timer.scheduledTimer(withTimeInterval: Constants.titleAnimationInterval, repeats: true) { timer in
-            if indexTracker >= titleString.count {
-                timer.invalidate()
-            } else {
-                let index = titleString.index(titleString.startIndex, offsetBy: indexTracker)
-                let outputString = String(titleString[titleString.startIndex...index])
-                // adding spaces stops chars from starting out huge
-                let spaces = String(repeating: " ", count: titleString.count - outputString.count)
-                self.appNameLabel.text = outputString + spaces
-                indexTracker += 1
-            }
-        }
+        // text is animated when set via CLTypingLabel pod
+        appNameLabel.text = "⚡️FlashChat"
     }
 
     // MARK: - Properties
     
-    @IBOutlet weak var appNameLabel: UILabel!
+    @IBOutlet weak var appNameLabel: CLTypingLabel!
     
-}
-
-// MARK: - Extensions
-
-extension TitleViewController {
-    struct Constants {
-        static let titleAnimationInterval: TimeInterval = 0.08
-    }
 }
