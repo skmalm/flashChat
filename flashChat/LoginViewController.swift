@@ -19,6 +19,12 @@ class LoginViewController: UIViewController {
               guard let strongSelf = self else { return }
                 if error != nil {
                     print(error!)
+                    let alert = UIAlertController(
+                        title: "Authetication Error",
+                        message: error!.localizedDescription,
+                        preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK",style: .default))
+                    strongSelf.present(alert, animated: true)
                 } else {
                     if let userEmail = authResult?.user.email {
                         print("\(userEmail) successfully logged in")

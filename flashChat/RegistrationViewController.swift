@@ -20,6 +20,12 @@ class RegistrationViewController: UIViewController {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if error != nil {
                     print(error!)
+                    let alert = UIAlertController(
+                        title: "Authetication Error",
+                        message: error!.localizedDescription,
+                        preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK",style: .default))
+                    self.present(alert, animated: true)
                 } else {
                     if let user = authResult?.user {
                         guard user.email != nil else { return }
