@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ChatViewController: UIViewController {
 
@@ -20,6 +21,15 @@ class ChatViewController: UIViewController {
         navigationItem.rightBarButtonItem = rightBarButtonItem
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let _ = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if let userEmail = user?.email {
+                print("In chat scene. \(userEmail) is currently logged in.")
+            }
+        }
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationItem.hidesBackButton = false
@@ -27,7 +37,15 @@ class ChatViewController: UIViewController {
     }
     
     @objc private func logOut() {
-        navigationController?.popToRootViewController(animated: true)
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            print("User successfully logged out.")
+            navigationController?.popToRootViewController(animated: true)
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+            print("Not popping to root due to sign out error.")
+        }
     }
     
 }
