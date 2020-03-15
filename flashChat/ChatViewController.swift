@@ -11,21 +11,16 @@ import Firebase
 
 class ChatViewController: UIViewController {
 
-    @IBOutlet weak var messageTextField: UITextField! { didSet { messageTextField.delegate = self}}
-    
+    // MARK: - Lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.hidesBackButton = true
         let rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOut))
         navigationItem.rightBarButtonItem = rightBarButtonItem
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         let _ = Auth.auth().addStateDidChangeListener { (auth, user) in
             if let userEmail = user?.email {
-                print("In chat scene. \(userEmail) is currently logged in.")
+                self.navigationItem.title = "⚡️\(userEmail)⚡️"
             }
         }
     }
@@ -35,6 +30,12 @@ class ChatViewController: UIViewController {
         navigationItem.hidesBackButton = false
         navigationItem.rightBarButtonItem = nil
     }
+    
+    // MARK: - Properties
+    
+    @IBOutlet weak var messageTextField: UITextField! { didSet { messageTextField.delegate = self}}
+    
+    // MARK: - Methods
     
     @objc private func logOut() {
         let firebaseAuth = Auth.auth()
@@ -49,6 +50,8 @@ class ChatViewController: UIViewController {
     }
     
 }
+
+// MARK: - Extensions
 
 extension ChatViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
