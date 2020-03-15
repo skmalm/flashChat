@@ -7,12 +7,29 @@
 //
 
 import UIKit
+import Firebase
 
 class RegistrationViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField! { didSet {emailTextField.delegate = self}}
     @IBOutlet weak var passwordTextField: UITextField! { didSet {passwordTextField.delegate = self}}
+    @IBOutlet weak var registerButton: UIButton!
     
+    @IBAction func register(_ sender: UIButton) {
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                if error != nil {
+                    print(error!)
+                } else {
+                    if let user = authResult?.user {
+                        guard user.email != nil else { return }
+                        print("\(user.email!) was successfully registered")
+                        self.performSegue(withIdentifier: "RegisterToChat", sender: self)
+                    }
+                }
+            }
+        }
+    }
 }
 
 extension RegistrationViewController: UITextFieldDelegate {

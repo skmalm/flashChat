@@ -126,7 +126,7 @@
                                             <color key="titleColor" name="BrandBlue"/>
                                         </state>
                                         <connections>
-                                            <segue destination="B1P-r6-cfs" kind="show" identifier="RegisterToChat" id="5t0-2G-QWn"/>
+                                            <action selector="register:" destination="YaS-n6-GYR" eventType="touchUpInside" id="ey4-s5-FXk"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -150,6 +150,8 @@
                     <connections>
                         <outlet property="emailTextField" destination="jMu-Pw-VeR" id="1np-58-K0g"/>
                         <outlet property="passwordTextField" destination="mpR-9P-1yn" id="GBt-AE-Xi3"/>
+                        <outlet property="registerButton" destination="xla-2x-8Ck" id="c73-XD-utl"/>
+                        <segue destination="B1P-r6-cfs" kind="show" identifier="RegisterToChat" id="4ld-HP-V3b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GtE-kz-WC4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -287,7 +289,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="B1P-r6-cfs" kind="show" identifier="LoginToChat" id="Gew-Fy-dp3"/>
+                                            <action selector="login:" destination="wux-rY-Qv9" eventType="touchUpInside" id="xXO-Nb-o4X"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -311,6 +313,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="bK6-aN-N3C" id="57l-Vs-hA8"/>
                         <outlet property="passwordTextField" destination="Ki7-TS-tku" id="0Ue-LK-Nh7"/>
+                        <segue destination="B1P-r6-cfs" kind="show" identifier="LoginToChat" id="fgV-ry-u0Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rl-zK-3vG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -332,7 +335,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Gew-Fy-dp3"/>
+        <segue reference="fgV-ry-u0Q"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
