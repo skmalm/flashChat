@@ -18,7 +18,7 @@ class ChatViewController: UIViewController {
         navigationItem.hidesBackButton = true
         let rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOut))
         navigationItem.rightBarButtonItem = rightBarButtonItem
-        let _ = Auth.auth().addStateDidChangeListener { (auth, user) in
+        Auth.auth().addStateDidChangeListener { (auth, user) in
             if let userEmail = user?.email {
                 self.navigationItem.title = "⚡️\(userEmail)⚡️"
             }

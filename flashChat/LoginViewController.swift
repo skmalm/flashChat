@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     @IBAction func login(_ sender: UIButton) {
         if let email = emailTextField.text, let password = passwordTextField.text {
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-              guard let strongSelf = self else { return }
+              guard let self = self else { return }
                 if error != nil {
                     print(error!)
                     let alert = UIAlertController(
@@ -24,11 +24,11 @@ class LoginViewController: UIViewController {
                         message: error!.localizedDescription,
                         preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK",style: .default))
-                    strongSelf.present(alert, animated: true)
+                    self.present(alert, animated: true)
                 } else {
                     if let userEmail = authResult?.user.email {
                         print("\(userEmail) successfully logged in")
-                        strongSelf.performSegue(withIdentifier: "LoginToChat", sender: strongSelf)
+                        self.performSegue(withIdentifier: "LoginToChat", sender: self)
                     }
                 }
             }
