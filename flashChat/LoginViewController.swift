@@ -15,8 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField! { didSet {passwordTextField.delegate = self}}
     @IBAction func login(_ sender: UIButton) {
         if let email = emailTextField.text, let password = passwordTextField.text {
-            Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-              guard let self = self else { return }
+            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
                 if error != nil {
                     print(error!)
                     let alert = UIAlertController(
