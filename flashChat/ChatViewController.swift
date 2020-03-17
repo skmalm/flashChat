@@ -38,9 +38,8 @@ class ChatViewController: UIViewController {
     // MARK: - Methods
     
     @objc private func logOut() {
-        let firebaseAuth = Auth.auth()
         do {
-            try firebaseAuth.signOut()
+            try Auth.auth().signOut()
             print("User successfully logged out.")
             navigationController?.popToRootViewController(animated: true)
         } catch let signOutError as NSError {
