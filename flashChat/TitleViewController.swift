@@ -25,14 +25,14 @@ class TitleViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         var indexTracker = 0
-        Timer.scheduledTimer(withTimeInterval: Constants.titleAnimationInterval, repeats: true) { timer in
-            if indexTracker >= Constants.titleString.count {
+        Timer.scheduledTimer(withTimeInterval: K.titleAnimationInterval, repeats: true) { timer in
+            if indexTracker >= K.titleString.count {
                 timer.invalidate()
             } else {
-                let index = Constants.titleString.index(Constants.titleString.startIndex, offsetBy: indexTracker)
-                let outputString = String(Constants.titleString[Constants.titleString.startIndex...index])
+                let index = K.titleString.index(K.titleString.startIndex, offsetBy: indexTracker)
+                let outputString = String(K.titleString[K.titleString.startIndex...index])
                 // adding spaces stops chars from starting out huge
-                let spaces = String(repeating: " ", count: Constants.titleString.count - outputString.count)
+                let spaces = String(repeating: " ", count: K.titleString.count - outputString.count)
                 self.appNameLabel.text = outputString + spaces
                 indexTracker += 1
             }

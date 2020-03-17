@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Constants {
+struct K {
     static let titleString = "⚡️FlashChat"
     static let titleAnimationInterval: TimeInterval = 0.1
     static let registerToChatSegueID = "RegisterToChat"

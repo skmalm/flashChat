@@ -234,10 +234,10 @@
             </objects>
             <point key="canvasLocation" x="3107" y="157"/>
         </scene>
-        <!--Flash Chat Navigation Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="Axs-KU-xln">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PQ3-aZ-N6r" customClass="FlashChatNavigationController" customModule="flashChat" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PQ3-aZ-N6r" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zl3-As-0VD">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

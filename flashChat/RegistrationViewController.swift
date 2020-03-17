@@ -30,7 +30,7 @@ class RegistrationViewController: UIViewController {
                     if let user = authResult?.user {
                         guard user.email != nil else { return }
                         print("\(user.email!) was successfully registered")
-                        self.performSegue(withIdentifier: Constants.registerToChatSegueID, sender: self)
+                        self.performSegue(withIdentifier: K.registerToChatSegueID, sender: self)
                     }
                 }
             }
