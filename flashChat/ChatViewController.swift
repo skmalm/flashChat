@@ -16,8 +16,6 @@ class ChatViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.hidesBackButton = true
-        let rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOut))
-        navigationItem.rightBarButtonItem = rightBarButtonItem
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if let userEmail = user?.email {
                 self.navigationItem.title = "⚡️\(userEmail)⚡️"
@@ -34,10 +32,10 @@ class ChatViewController: UIViewController {
     // MARK: - Properties
     
     @IBOutlet weak var messageTextField: UITextField! { didSet { messageTextField.delegate = self}}
-    
+
     // MARK: - Methods
     
-    @objc private func logOut() {
+    @IBAction func logOut(_ sender: UIBarButtonItem) {
         do {
             try Auth.auth().signOut()
             print("User successfully logged out.")
@@ -47,6 +45,7 @@ class ChatViewController: UIViewController {
             print("Not popping to root due to sign out error.")
         }
     }
+
     
 }
 
