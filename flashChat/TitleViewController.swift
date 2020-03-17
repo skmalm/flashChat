@@ -24,16 +24,15 @@ class TitleViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let titleString = "⚡️FlashChat"
         var indexTracker = 0
         Timer.scheduledTimer(withTimeInterval: Constants.titleAnimationInterval, repeats: true) { timer in
-            if indexTracker >= titleString.count {
+            if indexTracker >= Constants.titleString.count {
                 timer.invalidate()
             } else {
-                let index = titleString.index(titleString.startIndex, offsetBy: indexTracker)
-                let outputString = String(titleString[titleString.startIndex...index])
+                let index = Constants.titleString.index(Constants.titleString.startIndex, offsetBy: indexTracker)
+                let outputString = String(Constants.titleString[Constants.titleString.startIndex...index])
                 // adding spaces stops chars from starting out huge
-                let spaces = String(repeating: " ", count: titleString.count - outputString.count)
+                let spaces = String(repeating: " ", count: Constants.titleString.count - outputString.count)
                 self.appNameLabel.text = outputString + spaces
                 indexTracker += 1
             }
