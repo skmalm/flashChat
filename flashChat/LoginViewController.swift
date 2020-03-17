@@ -28,6 +28,8 @@ class LoginViewController: UIViewController {
                     if let userEmail = authResult?.user.email {
                         print("\(userEmail) successfully logged in")
                         self.performSegue(withIdentifier: "LoginToChat", sender: self)
+                    } else {
+                        print("ERROR: Got user but failed to get email")
                     }
                 }
             }
