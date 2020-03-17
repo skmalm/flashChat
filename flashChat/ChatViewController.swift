@@ -25,8 +25,7 @@ class ChatViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationItem.hidesBackButton = false
-        navigationItem.rightBarButtonItem = nil
+//        navigationItem.hidesBackButton = false
     }
     
     // MARK: - Properties
