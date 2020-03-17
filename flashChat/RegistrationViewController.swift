@@ -21,7 +21,7 @@ class RegistrationViewController: UIViewController {
                 if error != nil {
                     print(error!)
                     let alert = UIAlertController(
-                        title: "Authetication Error",
+                        title: "Authentication Error",
                         message: error!.localizedDescription,
                         preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK",style: .default))
@@ -30,7 +30,7 @@ class RegistrationViewController: UIViewController {
                     if let user = authResult?.user {
                         guard user.email != nil else { return }
                         print("\(user.email!) was successfully registered")
-                        self.performSegue(withIdentifier: "RegisterToChat", sender: self)
+                        self.performSegue(withIdentifier: Constants.registerToChatSegueID, sender: self)
                     }
                 }
             }

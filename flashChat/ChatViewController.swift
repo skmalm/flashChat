@@ -18,14 +18,13 @@ class ChatViewController: UIViewController {
         navigationItem.hidesBackButton = true
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if let userEmail = user?.email {
-                self.navigationItem.title = "⚡️\(userEmail)⚡️"
+                self.title = "⚡️\(userEmail)⚡️"
             }
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        navigationItem.hidesBackButton = false
     }
     
     // MARK: - Properties
