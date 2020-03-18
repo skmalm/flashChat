@@ -35,7 +35,10 @@ class ChatViewController: UIViewController {
         Message(sender: "1@2.com", body: "What's Up?")
     ]
     
-    @IBOutlet weak var tableView: UITableView! { didSet { tableView.dataSource = self }}
+    @IBOutlet weak var tableView: UITableView! { didSet {
+        tableView.dataSource = self
+        tableView.delegate = self
+        }}
     @IBOutlet weak var messageTextField: UITextField! { didSet { messageTextField.delegate = self}}
 
     // MARK: - Methods
@@ -68,7 +71,9 @@ extension ChatViewController: UITableViewDataSource {
         cell.textLabel?.text = "\(message.sender): \(message.body)"
         return cell
     }
-    
+}
+
+extension ChatViewController: UITableViewDelegate {
     
 }
 
