@@ -189,7 +189,7 @@
                                     <constraint firstAttribute="height" constant="80" id="Oeb-h0-8KX"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dh9-7P-ggs">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dh9-7P-ggs">
                                 <rect key="frame" x="0.0" y="88" width="414" height="728"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -228,6 +228,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="messageTextField" destination="xVb-ow-kJL" id="gI9-O3-vYc"/>
+                        <outlet property="tableView" destination="Dh9-7P-ggs" id="oS8-ph-T1d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fta-nj-M1T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -14,6 +14,7 @@
 		9E5625AE2415ACC900B3159A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E5625AD2415ACC900B3159A /* Assets.xcassets */; };
 		9E5625B12415ACC900B3159A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E5625AF2415ACC900B3159A /* LaunchScreen.storyboard */; };
 		9E5625BA2415B07700B3159A /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5625B92415B07700B3159A /* TitleViewController.swift */; };
+		9E6761272422A70E00C69BA4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6761262422A70E00C69BA4 /* Message.swift */; };
 		9E984D742416F2B1002AFD02 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E984D732416F2B1002AFD02 /* LoginViewController.swift */; };
 		9E984D782416FBEB002AFD02 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E984D772416FBEB002AFD02 /* RegistrationViewController.swift */; };
 		9E984D7A2416FDC7002AFD02 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E984D792416FDC7002AFD02 /* ChatViewController.swift */; };
@@ -33,6 +34,7 @@
 		9E5625B02415ACC900B3159A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E5625B22415ACC900B3159A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E5625B92415B07700B3159A /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
+		9E6761262422A70E00C69BA4 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		9E984D732416F2B1002AFD02 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9E984D772416FBEB002AFD02 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		9E984D792416FDC7002AFD02 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -73,28 +75,53 @@
 		9E5625A32415ACC400B3159A /* flashChat */ = {
 			isa = PBXGroup;
 			children = (
-				9E5625AA2415ACC400B3159A /* Main.storyboard */,
-				9E984D792416FDC7002AFD02 /* ChatViewController.swift */,
+				9E6761282422A72200C69BA4 /* Views */,
+				9E67612A2422A74000C69BA4 /* Models */,
+				9E6761292422A73400C69BA4 /* Controllers */,
 				9E17DDA124217D7C00EB29D5 /* K.swift */,
-				9E984D732416F2B1002AFD02 /* LoginViewController.swift */,
-				9E984D772416FBEB002AFD02 /* RegistrationViewController.swift */,
-				9E5625B92415B07700B3159A /* TitleViewController.swift */,
 				9E5625AD2415ACC900B3159A /* Assets.xcassets */,
-				9E5625AF2415ACC900B3159A /* LaunchScreen.storyboard */,
 				9E5625B22415ACC900B3159A /* Info.plist */,
 				9EFE5453241A91E500F4B951 /* GoogleService-Info.plist */,
-				9E5625B82415AFA300B3159A /* Supporting Files */,
+				9E5625B82415AFA300B3159A /* App & Scene Delegates */,
 			);
 			path = flashChat;
 			sourceTree = "<group>";
 		};
-		9E5625B82415AFA300B3159A /* Supporting Files */ = {
+		9E5625B82415AFA300B3159A /* App & Scene Delegates */ = {
 			isa = PBXGroup;
 			children = (
 				9E5625A42415ACC400B3159A /* AppDelegate.swift */,
 				9E5625A62415ACC400B3159A /* SceneDelegate.swift */,
 			);
-			path = "Supporting Files";
+			path = "App & Scene Delegates";
+			sourceTree = "<group>";
+		};
+		9E6761282422A72200C69BA4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9E5625AA2415ACC400B3159A /* Main.storyboard */,
+				9E5625AF2415ACC900B3159A /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9E6761292422A73400C69BA4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9E984D792416FDC7002AFD02 /* ChatViewController.swift */,
+				9E984D732416F2B1002AFD02 /* LoginViewController.swift */,
+				9E984D772416FBEB002AFD02 /* RegistrationViewController.swift */,
+				9E5625B92415B07700B3159A /* TitleViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9E67612A2422A74000C69BA4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9E6761262422A70E00C69BA4 /* Message.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E4BC6D71540755B6CF8175FD /* Frameworks */ = {
@@ -235,6 +262,7 @@
 				9E984D7A2416FDC7002AFD02 /* ChatViewController.swift in Sources */,
 				9E5625A52415ACC400B3159A /* AppDelegate.swift in Sources */,
 				9E5625A72415ACC400B3159A /* SceneDelegate.swift in Sources */,
+				9E6761272422A70E00C69BA4 /* Message.swift in Sources */,
 				9E5625BA2415B07700B3159A /* TitleViewController.swift in Sources */,
 				9E17DDA224217D7C00EB29D5 /* K.swift in Sources */,
 			);

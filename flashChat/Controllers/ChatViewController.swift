@@ -29,6 +29,13 @@ class ChatViewController: UIViewController {
     
     // MARK: - Properties
     
+    var messages: [Message] = [
+        Message(sender: "1@2.com", body: "Hey!"),
+        Message(sender: "a@b.com", body: "Hello!"),
+        Message(sender: "1@2.com", body: "What's Up?")
+    ]
+    
+    @IBOutlet weak var tableView: UITableView! { didSet { tableView.dataSource = self }}
     @IBOutlet weak var messageTextField: UITextField! { didSet { messageTextField.delegate = self}}
 
     // MARK: - Methods
@@ -48,6 +55,22 @@ class ChatViewController: UIViewController {
 }
 
 // MARK: - Extensions
+
+extension ChatViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath)
+        let message = messages[indexPath.row]
+        cell.textLabel?.text = "\(message.sender): \(message.body)"
+        return cell
+    }
+    
+    
+}
 
 extension ChatViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
