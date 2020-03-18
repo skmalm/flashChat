@@ -32,10 +32,12 @@ class ChatViewController: UIViewController {
     var messages: [Message] = [
         Message(sender: "1@2.com", body: "Hey!"),
         Message(sender: "a@b.com", body: "Hello!"),
-        Message(sender: "1@2.com", body: "What's Up?")
+        Message(sender: "1@2.com", body: "What's Up?"),
+        Message(sender: "a@b.com", body: "How should I know? The sky? I don't bloody know. I've been in this underground bunker for several years now. 🤷🏼‍♀️")
     ]
     
     @IBOutlet weak var tableView: UITableView! { didSet {
+        tableView.register(UINib(nibName: K.cellNibName, bundle: .main), forCellReuseIdentifier: K.cellIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
         }}
@@ -66,15 +68,16 @@ extension ChatViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! MessageCell
         let message = messages[indexPath.row]
-        cell.textLabel?.text = "\(message.sender): \(message.body)"
+        cell.messageLabel.text = "\(message.sender): \(message.body)"
         return cell
     }
 }
 
 extension ChatViewController: UITableViewDelegate {
-    
+    // Not using any delegate properties/methods yet
+    // Delete this and remove delegate assignment if not needed
 }
 
 extension ChatViewController: UITextFieldDelegate {

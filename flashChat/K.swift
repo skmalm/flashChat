@@ -14,6 +14,7 @@ struct K {
     static let registerToChatSegueID = "RegisterToChat"
     static let loginToChatSegueID = "LoginToChat"
     static let cellIdentifier = "ReusableCell"
+    static let cellNibName = "MessageCell"
 }
 
 /*
