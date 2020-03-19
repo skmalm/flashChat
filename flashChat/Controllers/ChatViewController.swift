@@ -16,7 +16,8 @@ class ChatViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.hidesBackButton = true
-        Auth.auth().addStateDidChangeListener { (auth, user) in
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            self.user = user
             if let userEmail = user?.email {
                 self.title = "⚡️\(userEmail)⚡️"
             }
@@ -28,6 +29,10 @@ class ChatViewController: UIViewController {
     }
     
     // MARK: - Properties
+    
+    var handle: AuthStateDidChangeListenerHandle?
+    var user: User?
+    let db = Firestore.firestore()
     
     var messages: [Message] = [
         Message(sender: "1@2.com", body: "Hey!"),
@@ -45,10 +50,33 @@ class ChatViewController: UIViewController {
 
     // MARK: - Methods
     
+    @IBAction func send(_ sender: UIButton) {
+        sendMessage()
+    }
+    
+    func sendMessage() {
+        guard let messageBody = messageTextField.text, !messageBody.isEmpty else { return }
+        if let messageSender = user?.email {
+            db.collection(K.FStore.collectionName).addDocument(
+            data: [K.FStore.senderField: messageSender, K.FStore.bodyField: messageBody]) { error in
+                if error == nil {
+                    print("Successfully saved data to firestore")
+                } else {
+                    print("Error saving data to firestore: \(error!)")
+                }
+            }
+        }
+        messageTextField.endEditing(true)
+        messageTextField.text = ""
+    }
+    
     @IBAction func logOut(_ sender: UIBarButtonItem) {
         do {
             try Auth.auth().signOut()
             print("User successfully logged out.")
+            if handle != nil {
+                Auth.auth().removeStateDidChangeListener(handle!)
+            }
             navigationController?.popToRootViewController(animated: true)
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
@@ -85,7 +113,7 @@ extension ChatViewController: UITextFieldDelegate {
         if textField.text == "" {
             return false
         } else {
-            textField.endEditing(true)
+            sendMessage()
             return true
         }
     }
