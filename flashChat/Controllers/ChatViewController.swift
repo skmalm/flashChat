@@ -12,7 +12,7 @@ import Firebase
 class ChatViewController: UIViewController {
 
     // MARK: - Lifecycle
-    
+        
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.hidesBackButton = true
@@ -22,24 +22,41 @@ class ChatViewController: UIViewController {
                 self.title = "⚡️\(userEmail)⚡️"
             }
         }
+        listener = db.collection(K.FStore.collectionName).addSnapshotListener { querySnapshot, error in
+            guard let documents = querySnapshot?.documents else {
+                print("Error fetching documents: \(error!)")
+                return
+            }
+            self.messages.removeAll()
+            var allMessages = [Message]()
+            for document in documents {
+                let documentData = document.data(with: .estimate)
+                if let sender = documentData[K.FStore.senderField] as? String,
+                    let body = documentData[K.FStore.bodyField] as? String,
+                    let date = documentData[K.FStore.dateField] as? TimeInterval {
+                    allMessages.append(Message(sender: sender, body: body, date: date))
+                }
+            }
+            self.messages = allMessages.sorted(by: { $0.date < $1.date })
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        listener?.remove()
     }
     
     // MARK: - Properties
     
     var handle: AuthStateDidChangeListenerHandle?
+    var listener: ListenerRegistration?
     var user: User?
     let db = Firestore.firestore()
     
-    var messages: [Message] = [
-        Message(sender: "1@2.com", body: "Hey!"),
-        Message(sender: "a@b.com", body: "Hello!"),
-        Message(sender: "1@2.com", body: "What's Up?"),
-        Message(sender: "a@b.com", body: "How should I know? The sky? I don't bloody know. I've been in this underground bunker for several years now. 🤷🏼‍♀️")
-    ]
+    var messages = [Message]()
     
     @IBOutlet weak var tableView: UITableView! { didSet {
         tableView.register(UINib(nibName: K.cellNibName, bundle: .main), forCellReuseIdentifier: K.cellIdentifier)
@@ -58,7 +75,7 @@ class ChatViewController: UIViewController {
         guard let messageBody = messageTextField.text, !messageBody.isEmpty else { return }
         if let messageSender = user?.email {
             db.collection(K.FStore.collectionName).addDocument(
-            data: [K.FStore.senderField: messageSender, K.FStore.bodyField: messageBody]) { error in
+            data: [K.FStore.senderField: messageSender, K.FStore.bodyField: messageBody, K.FStore.dateField: Date().timeIntervalSince1970]) { error in
                 if error == nil {
                     print("Successfully saved data to firestore")
                 } else {
