@@ -61,7 +61,6 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! { didSet {
         tableView.register(UINib(nibName: K.cellNibName, bundle: .main), forCellReuseIdentifier: K.cellIdentifier)
         tableView.dataSource = self
-        tableView.delegate = self
         }}
     @IBOutlet weak var messageTextField: UITextField! { didSet { messageTextField.delegate = self}}
 
@@ -125,11 +124,6 @@ extension ChatViewController: UITableViewDataSource {
         }
         return cell
     }
-}
-
-extension ChatViewController: UITableViewDelegate {
-    // Not using any delegate properties/methods yet
-    // Delete this and remove delegate assignment if not needed
 }
 
 extension ChatViewController: UITextFieldDelegate {
