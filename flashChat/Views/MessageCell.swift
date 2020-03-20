@@ -24,7 +24,8 @@ class MessageCell: UITableViewCell {
         didSet { messageView.layer.cornerRadius = messageView.frame.height / 5 }
     }
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var meAvatar: UIImageView!
+    @IBOutlet weak var youAvatar: UIImageView!
     
     // MARK: - Methods
     

@@ -20,11 +20,18 @@
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="unT-Lf-1Js">
                         <rect key="frame" x="10" y="10" width="411" height="178"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YouAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="lnZ-G1-SaH" userLabel="YouAvatar">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="98h-HP-zR6"/>
+                                    <constraint firstAttribute="height" constant="40" id="QQ2-dU-Lda"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g1q-bY-Gx4" userLabel="Message View">
-                                <rect key="frame" x="0.0" y="0.0" width="351" height="101.5"/>
+                                <rect key="frame" x="60" y="0.0" width="291" height="121.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNm-8N-lDn" userLabel="Message Label">
-                                        <rect key="frame" x="10" y="10" width="331" height="81.5"/>
+                                        <rect key="frame" x="10" y="10" width="271" height="101.5"/>
                                         <string key="text">I'm a message. A very long message. a VERY long message. They say this is one of the longest messages ever. That's what they say. Don't take it from me.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="BrandLightPurple"/>
@@ -39,7 +46,7 @@
                                     <constraint firstItem="dNm-8N-lDn" firstAttribute="top" secondItem="g1q-bY-Gx4" secondAttribute="top" constant="10" id="psM-Yx-fLV"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MeAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="zps-Ef-evD">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MeAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="zps-Ef-evD" userLabel="YouAvatar">
                                 <rect key="frame" x="371" y="0.0" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="AVs-uv-IZS"/>
@@ -58,15 +65,17 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="avatarImage" destination="zps-Ef-evD" id="vww-OB-sx0"/>
+                <outlet property="meAvatar" destination="zps-Ef-evD" id="vww-OB-sx0"/>
                 <outlet property="messageLabel" destination="dNm-8N-lDn" id="gbq-rH-2oH"/>
                 <outlet property="messageView" destination="g1q-bY-Gx4" id="aCo-AX-fbV"/>
+                <outlet property="youAvatar" destination="lnZ-G1-SaH" id="g5T-Xe-fDy"/>
             </connections>
             <point key="canvasLocation" x="222.46376811594206" y="204.24107142857142"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="MeAvatar" width="36" height="36"/>
+        <image name="YouAvatar" width="36" height="36"/>
         <namedColor name="BrandLightPurple">
             <color red="0.98000001907348633" green="0.9649999737739563" blue="0.99699997901916504" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
