@@ -4,8 +4,8 @@ target 'flashChat' do
   # use_frameworks!
 
   # Pods for flashChat
-
-pod 'Firebase/Auth'
-pod 'Firebase/Firestore'
+  
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Auth'
 
 end
