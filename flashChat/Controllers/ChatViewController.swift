@@ -114,12 +114,14 @@ extension ChatViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! MessageCell
         let message = messages[indexPath.row]
-        cell.messageLabel.text = "\(message.sender): \(message.body)"
+        // if message is from logged in user
         if message.sender == user?.email {
+            cell.messageLabel.text = message.body
             cell.youAvatar.isHidden = true
             cell.messageView.backgroundColor = UIColor(named: K.BrandColors.lightPurple)
             cell.messageLabel.textColor = UIColor(named: K.BrandColors.purple)
-        } else {
+        } else { // if message is not from logged in user
+            cell.messageLabel.text = "\(message.sender): \(message.body)"
             cell.meAvatar.isHidden = true
         }
         return cell
