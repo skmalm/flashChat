@@ -80,13 +80,15 @@ class ChatViewController: UIViewController {
             data: [K.FStore.senderField: messageSender, K.FStore.bodyField: messageBody, K.FStore.dateField: Date().timeIntervalSince1970]) { error in
                 if error == nil {
                     print("Successfully saved data to firestore")
+                    DispatchQueue.main.async {
+                        self.messageTextField.endEditing(true)
+                        self.messageTextField.text = ""
+                    }
                 } else {
                     print("Error saving data to firestore: \(error!)")
                 }
             }
         }
-        messageTextField.endEditing(true)
-        messageTextField.text = ""
     }
     
     @IBAction func logOut(_ sender: UIBarButtonItem) {
