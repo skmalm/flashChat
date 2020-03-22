@@ -39,6 +39,7 @@ class ChatViewController: UIViewController {
                     }
                 }
                 self.messages = allMessages
+                guard self.messages.count > 0 else { return }
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                     let bottomRowIndexPath = IndexPath(row: self.messages.count - 1, section: 0)
@@ -86,6 +87,12 @@ class ChatViewController: UIViewController {
                     }
                 } else {
                     print("Error saving data to firestore: \(error!)")
+                    let alert = UIAlertController(
+                        title: "Database Error",
+                        message: error!.localizedDescription,
+                        preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK",style: .default))
+                    self.present(alert, animated: true)
                 }
             }
         }
