@@ -7,5 +7,6 @@ target 'flashChat' do
   
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
+  pod 'IQKeyboardManagerSwift'
 
 end
