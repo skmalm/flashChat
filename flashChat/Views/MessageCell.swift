@@ -27,7 +27,7 @@ class MessageCell: UITableViewCell {
         }}
     
     @IBOutlet weak var messageView: UIView! {
-        didSet { messageView.layer.cornerRadius = messageView.frame.height / 5 }
+        didSet { messageView.layer.cornerRadius = messageView.frame.height / 6 }
     }
     
     @IBOutlet weak var messageLabel: UILabel!
