@@ -22,26 +22,27 @@ class ChatViewController: UIViewController {
                 self.title = "⚡️\(userEmail)⚡️"
             }
         }
-        listener = db.collection(K.FStore.collectionName).addSnapshotListener { querySnapshot, error in
-            guard let documents = querySnapshot?.documents else {
-                print("Error fetching documents: \(error!)")
-                return
-            }
-            self.messages.removeAll()
-            var allMessages = [Message]()
-            for document in documents {
-                let documentData = document.data(with: .estimate)
-                if let sender = documentData[K.FStore.senderField] as? String,
-                    let body = documentData[K.FStore.bodyField] as? String,
-                    let date = documentData[K.FStore.dateField] as? TimeInterval {
-                    allMessages.append(Message(sender: sender, body: body, date: date))
+        listener = db.collection(K.FStore.collectionName)
+            .order(by: K.FStore.dateField)
+            .addSnapshotListener { querySnapshot, error in
+                guard let documents = querySnapshot?.documents else {
+                    print("Error fetching documents: \(error!)")
+                    return
+                }
+                self.messages.removeAll()
+                var allMessages = [Message]()
+                for document in documents {
+                    let documentData = document.data(with: .estimate)
+                    if let sender = documentData[K.FStore.senderField] as? String,
+                        let body = documentData[K.FStore.bodyField] as? String {
+                        allMessages.append(Message(sender: sender, body: body))
+                    }
+                }
+                self.messages = allMessages
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
                 }
             }
-            self.messages = allMessages.sorted(by: { $0.date < $1.date })
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
