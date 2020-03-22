@@ -119,16 +119,10 @@ extension ChatViewController: UITableViewDataSource {
         // if message is from logged in user
         if message.sender == user?.email {
             cell.messageLabel.text = message.body
-            cell.meAvatar.isHidden = false
-            cell.youAvatar.isHidden = true
-            cell.messageView.backgroundColor = UIColor(named: K.BrandColors.lightPurple)
-            cell.messageLabel.textColor = UIColor(named: K.BrandColors.purple)
+            cell.cellType = .me
         } else { // if message is not from logged in user
             cell.messageLabel.text = "\(message.sender): \(message.body)"
-            cell.meAvatar.isHidden = true
-            cell.youAvatar.isHidden = false
-            cell.messageView.backgroundColor = UIColor(named: K.BrandColors.purple)
-            cell.messageLabel.textColor = UIColor(named: K.BrandColors.lightPurple)
+            cell.cellType = .you
         }
         return cell
     }
