@@ -41,9 +41,8 @@ class ChatViewController: UIViewController {
                 self.messages = allMessages
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
-                    if let bottomRow = self.tableView.indexPathsForVisibleRows?.last {
-                        self.tableView.scrollToRow(at: bottomRow, at: .bottom, animated: true)
-                    }
+                    let bottomRowIndexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                    self.tableView.scrollToRow(at: bottomRowIndexPath, at: .bottom, animated: true)
                 }
             }
     }
