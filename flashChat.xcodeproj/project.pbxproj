@@ -42,6 +42,7 @@
 		9E984D732416F2B1002AFD02 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9E984D772416FBEB002AFD02 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		9E984D792416FDC7002AFD02 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		9EABAD362428F9F60044ABE0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9EFE5453241A91E500F4B951 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E6CB576C4B3FDE5EEBCB2BEF /* Pods-flashChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flashChat.release.xcconfig"; path = "Target Support Files/Pods-flashChat/Pods-flashChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +62,7 @@
 		9E5625982415ACC400B3159A = {
 			isa = PBXGroup;
 			children = (
+				9EABAD362428F9F60044ABE0 /* README.md */,
 				9E5625A32415ACC400B3159A /* flashChat */,
 				9E5625A22415ACC400B3159A /* Products */,
 				FA82374D6E5CF1B7A0AF937B /* Pods */,
