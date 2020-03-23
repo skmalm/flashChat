@@ -19,3 +19,7 @@ Register via email and password then start chatting!
 * Firebase Authentication
 * Cloud Firestore
 * IQ Keyboard Manager Swift
+
+## Notes
+
+Created as part of the App Brewery's online iOS bootcamp. Avatar image assets and app icon supplied by the course.
